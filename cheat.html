@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MC CHEAT HUB | 26.3</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg: #080b10;
+    --panel: #101720;
+    --panel2: #151f2b;
+    --green: #55ff88;
+    --green2: #25d967;
+    --text: #f4f7fa;
+    --muted: #8794a3;
+    --border: rgba(255,255,255,.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 50% 0%, #153c2850, transparent 55%),
+        radial-gradient(ellipse at 100% 70%, #172c4930, transparent 50%);
+}
+
+.grid {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .12;
+    background-image:
+        linear-gradient(#ffffff10 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff10 1px, transparent 1px);
+    background-size: 45px 45px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    height: 76px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,11,16,.85);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    width: 39px;
+    height: 39px;
+    background: linear-gradient(135deg, var(--green), #16b85b);
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    color: #07140b;
+    font-size: 22px;
+    box-shadow: 0 0 25px #55ff8830;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13px;
+    transition: .2s;
+}
+
+.nav-link:hover {
+    color: var(--green);
+}
+
+.version {
+    padding: 9px 15px;
+    background: #55ff8815;
+    border: 1px solid #55ff8840;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 8px;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+    padding: 105px 20px 80px;
+    text-align: center;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 16px;
+    border: 1px solid #55ff8840;
+    background: #55ff8810;
+    border-radius: 30px;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+.online-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--green);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+    font-weight: 900;
+    letter-spacing: -5px;
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--green);
+    text-shadow: 0 0 40px #55ff8830;
+}
+
+.hero p {
+    max-width: 550px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.primary-btn {
+    padding: 15px 25px;
+    background: var(--green);
+    color: #06100a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    border-radius: 9px;
+    transition: .25s;
+}
+
+.primary-btn:hover {
+    background: var(--green2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px #55ff8825;
+}
+
+.secondary-btn {
+    padding: 15px 25px;
+    background: #ffffff08;
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 9px;
+    transition: .25s;
+}
+
+.secondary-btn:hover {
+    border-color: var(--green);
+}
+
+/* STATS */
+
+.stats {
+    max-width: 850px;
+    margin: 0 auto 85px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat {
+    padding: 23px;
+    background: #ffffff06;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 25px;
+    color: var(--green);
+    margin-bottom: 7px;
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* DOWNLOAD SECTION */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px 100px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.section-tag {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* CHEAT CARD */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #151f2b, #0e151e);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: .6;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #55ff8860;
+    box-shadow: 0 20px 50px #00000050;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.cheat-icon {
+    width: 58px;
+    height: 58px;
+    background: #55ff8814;
+    border: 1px solid #55ff8830;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    font-size: 27px;
+}
+
+.status {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--green);
+    background: #55ff8812;
+    border: 1px solid #55ff8830;
+    padding: 8px 12px;
+    border-radius: 30px;
+}
+
+.card h3 {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.card-description {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+    min-height: 48px;
+}
+
+.card-info {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.info-item {
+    background: #ffffff07;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-size: 10px;
+    color: #b5c0ca;
+    font-weight: 700;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 9px;
+    background: var(--green);
+    color: #07110a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    transition: .25s;
+}
+
+.download-btn:hover {
+    background: var(--green2);
+    box-shadow: 0 8px 25px #55ff8825;
+    transform: translateY(-2px);
+}
+
+.download-btn:active {
+    transform: scale(.98);
+}
+
+/* INFORMATION */
+
+.info-box {
+    margin-top: 35px;
+    background: #55ff8808;
+    border: 1px solid #55ff8825;
+    padding: 22px;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 22px;
+}
+
+.info-box h4 {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.info-box p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 35px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.footer-logo span {
+    color: var(--green);
+}
+
+footer p {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .stats, .card {
+    animation: fadeUp .7s ease both;
+}
+
+.card:nth-child(2) {
+    animation-delay: .15s;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 700px) {
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 75px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        padding: 0 25px;
+    }
+}
+
+::selection {
+    background: var(--green);
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #263b30;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--green);
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="grid"></div>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">M</div>
+        MC <span>CHEAT HUB</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="#downloads" class="nav-link">Downloads</a>
+        <a href="#about" class="nav-link">About</a>
+        <div class="version">JAVA 26.3</div>
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-label">
+        <div class="online-dot"></div>
+        MINECRAFT JAVA EDITION
+    </div>
+
+    <h1>MC <span>CHEAT</span><br>HUB</h1>
+
+    <p>
+        Minecraft Java 26.3 için hazırlanmış indirme merkezi.
+        Dosyalarını keşfet ve tek tıkla indir.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#downloads" class="primary-btn">
+            ↓ DOWNLOAD CHEATS
+        </a>
+
+        <a href="#about" class="secondary-btn">
+            LEARN MORE
+        </a>
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat">
+        <h2>02</h2>
+        <p>AVAILABLE FILES</p>
+    </div>
+
+    <div class="stat">
+        <h2>26.3
+        </h2>
+        <p>MINECRAFT VERSION</p>
+    </div>
+
+    <div class="stat">
+        <h2>JAR</h2>
+        <p>FILE FORMAT</p>
+    </div>
+
+</section>
+
+<main class="container" id="downloads">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Downloads</h2>
+            <p>Choose your file and start downloading.</p>
+        </div>
+
+        <div class="section-tag">
+            ALL FILES / 26.3
+        </div>
+
+    </div>
+
+    <div class="cards">
+
+        <!-- CHEAT 1 -->
+
+        <div class="card">
+
+            <div class="card-top">
+
+                <div class="cheat-icon">⚡</div>
+
+                <div class="status">
+                    AVAILABLE
+                </div>
+
+            </div>
+
+            <h3>Cheat 01</h3>
+
+            <p class="card-description">
+                Minecraft Java 26.3 için birinci JAR dosyası.
+                İndirmek için aşağıdaki butonu kullan.
+            </p>
+
+            <div class="card-info">
+                <div class="info-item">JAVA 26.3</div>
+                <div class="info-item">JAR FILE</div>
+            </div>
+
+            <a class="download-btn"
+               href="cheat1.jar"
+               download="cheat1.jar">
+
+                ↓ DOWNLOAD FILE
+
+            </a>
+
+        </div>
+
+        <!-- CHEAT 2 -->
+
+        <div class="card">
+
+            <div class="card-top">
+
+                <div class="cheat-icon">🔥</div>
+
+                <div class="status">
+                    AVAILABLE
+                </div>
+
+            </div>
+
+            <h3>Cheat 02</h3>
+
+            <p class="card-description">
+                Minecraft Java 26.3 için ikinci JAR dosyası.
+                İndirmek için aşağıdaki butonu kullan.
+            </p>
+
+            <div class="card-info">
+                <div class="info-item">JAVA 26.3</div>
+                <div class="info-item">JAR FILE</div>
+            </div>
+
+            <a class="download-btn"
+               href="cheat2.jar"
+               download="cheat2.jar">
+
+                ↓ DOWNLOAD FILE
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="info-box" id="about">
+
+        <div class="info-icon">ⓘ</div>
+
+        <div>
+            <h4>INFORMATION</h4>
+
+            <p>
+                Bu sayfa Minecraft Java 26.3 için hazırlanmıştır.
+                İndirilen JAR dosyalarını çalıştırmadan önce
+                güvenilir olduklarını ve sürüm uyumluluklarını kontrol et.
+                Bilinmeyen dosyalar bilgisayarına zarar verebilir.
+            </p>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="footer-logo">
+        MC <span>CHEAT HUB</span>
+    </div>
+
+    <p>© 2026 MC Cheat Hub. All rights reserved.</p>
+
+    <p>MINECRAFT JAVA 26.3</p>
+
+</footer>
+
+</body>
+</html>
